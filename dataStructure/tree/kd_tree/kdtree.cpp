@@ -1,84 +1,61 @@
-#include <iostream>
-#include <vector>
+#include "kdtree.h"
 
-using namespace std;
-
-// 2d dimensional points
-const int k = 2;
-
-struct Node{
-    vector<int> point;
-    Node *left,*right;
-    Node(vector<int> arr):point(arr),left(NULL),right(NULL){}
-};
-
-
-// insert point to kdtree
-void insertRec(Node* root,vector<int> point,unsigned depth){
-    unsigned cd = depth % k;
-    if(point[cd] < (root->point[cd])){
-        if(root->left==NULL)root->left = new Node(point);
-        else insertRec(root->left,point,depth+1);
-    }else{
-        if(root->right==NULL)root->right = new Node(point);
-        else insertRec(root->right,point,depth+1);
-    }
-}
-
-// same as binary tree,just choose different dimensional each time
-void insert(Node* root,vector<int> point){
-    insertRec(root,point,0);
+kdtree::kdtree(std::vector<std::vector<int>> points){
+    this->points = points;
 }
 
 // build kdtree
-Node* buildTree(vector<vector<int>> p){
-    if(p.size()==0)return NULL;
-    Node* root = new Node(p[0]);
-    for(int i=1;i<p.size();++i){
-        insert(root,p[i]);
+Node* kdtree::buildTree(){
+    // if points is empty,return NULL
+    if(this->points.size()==0)return NULL;
+    // create root with first elements
+    Node* root = new Node(this->points[0]);
+    // insert each elements to kdtree
+    for(int i=1;i<this->points.size();++i){
+        insert(root,points[i]);
     }
     return root;
 }
 
-//inorder traverse tree
-void inorder(Node* root){
-    if(root==NULL)return;
-    inorder(root->left);
-    cout << "("<< root->point[0] << ","<<root->point[1]<<")\n";
-    inorder(root->right);
+// assign first one with depth 0
+void kdtree::insert(Node* root,std::vector<int> point){
+    insert(root,point,0);
 }
+// insert elements to tree
+void kdtree::insert(Node* root,std::vector<int> point,std::size_t depth){
+    size_t cd = depth / point.size();
 
-// check whether two vector are equal
-bool isEqual(const vector<int> &p1,const vector<int> &p2){
-    return (p1.size()==p2.size() && std::equal(p1.begin(),p1.end(),p2.begin()));
-}
-
-// recursive search kdtree
-bool searchRec(Node* root,vector<int> p,unsigned depth){
-    if(root==NULL)return false;
-    if(isEqual(p,root->point))return true;
-    unsigned cd = depth % k;
-    if(p[cd] < (root->point[cd])){
-        return searchRec(root->left,p,depth+1);
+    if(point[cd] < (root->point[cd])){
+        if(root->left) insert(root->left,point,depth+1);
+        else root->left = new Node(point);
+    }else if(point[cd] > (root->point[cd])){
+        if(root->right) insert(root->right,point,depth+1);
+        else root->right = new Node(point);
     }else{
-        return searchRec(root->right,p,depth+1);
+        std::cout << "dim " << cd << "conflicts with "<<point[cd] << std::endl;
+        return;
     }
 }
 
-bool search(Node* root,vector<int> p){
-    return searchRec(root,p,0);
+bool kdtree::search(Node *root,std::vector<int> point){
+    return search(root,point,0);
 }
 
-int main(){
-    vector<vector<int>> p = {{3, 6}, {17, 15}, {13, 15}, {6, 12}, 
-                       {9, 1}, {2, 7}, {10, 19}}; 
-    
-    Node* root = buildTree(p);
-    
-    // inorder(root);
+// check whether two vector are same
+bool kdtree::isEqual(const std::vector<int> &p1,const std::vector<int> &p2){
+    return (p1.size()==p2.size() && std::equal(p1.begin(),p1.end(),p2.begin()));
+}
 
-    vector<int> p1 = {6,12};
-    cout << search(root,p1)<<endl;
+// search node
+bool kdtree::search(Node *root,std::vector<int> point,std::size_t depth){
+    if(root==NULL)return false;
+    if(isEqual(root->point,point))return true;
 
-    return 0;
+    size_t cd = depth / point.size();
+
+    if(point[cd] < (root->point[cd])){
+        return search(root->left,point,depth+1);
+    }else{
+        return search(root->right,point,depth+1);
+    }
 }
