@@ -8,3 +8,9 @@
 - [Faster RCNN](https://github.com/wanghaichuan941221/python/tree/master/deepLearning/torch/faster_rcnn)
 
 ### localization contains some localization algorithms
+
+### dataStructure contains some basic data structure 
+- tree
+    - [binary tree](dataStructure/tree/binary_tree/)
+    - [kd-tree](dataStructure/tree/kd_tree/)
+    - [octree](dataStructure/tree/octree/)  
