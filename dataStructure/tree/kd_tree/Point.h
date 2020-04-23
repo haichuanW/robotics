@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Software License Agreement (BSD License)
+ * 
+ * Created on Sun April 19 2020
+ * Basical function to create octree
+ * 
+ * author Haichuan Wang
+ *************************************************************************/
+
 #include <iostream>
 
 template<typename coordinate_type, size_t dimensions>
