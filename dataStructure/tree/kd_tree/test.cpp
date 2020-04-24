@@ -39,6 +39,7 @@ int main(){
     rewind(pFile);                // rewind file pointer to the beginning
     float *rawData = new float[fileSize];
     fread(rawData,sizeof(float),fileSize/sizeof(float),pFile);
+    fclose(pFile);
 
     long number_of_points = fileSize / 4 / sizeof(float);
 
@@ -61,6 +62,8 @@ int main(){
     std::cout << "nodes visited: " << tree.visited() << '\n';
 
     std::cout << "time spent: " << elapsed.count() << "ms" << std::endl;
+
+    delete []rawData;
     
     return 0;
 }

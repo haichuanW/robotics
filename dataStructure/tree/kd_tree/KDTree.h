@@ -6,6 +6,8 @@
  * 
  * author Haichuan Wang
  *************************************************************************/
+#ifndef _KDTREE_H_
+#define _KDTREE_H_
 
 #include "Point.h"
 
@@ -114,3 +116,5 @@ const typename kdtree<coordinate_type,dimensions>::point_type& kdtree<coordinate
     knnSearch(root_, pt, 0);
     return best_->point_;
 }
+
+#endif

@@ -7,6 +7,9 @@
  * author Haichuan Wang
  *************************************************************************/
 
+#ifndef _POINT_H_
+#define _POINT_H_
+
 #include <iostream>
 
 template<typename coordinate_type, size_t dimensions>
@@ -39,3 +42,5 @@ public:
 private:
     std::array<coordinate_type, dimensions> coords_;
 };
+
+#endif
