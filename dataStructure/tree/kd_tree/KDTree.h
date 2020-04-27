@@ -44,6 +44,11 @@ public:
     template<typename iterator>
     kdtree(iterator begin, iterator end);
 
+    kdtree(const kdtree<coordinate_type,dimensions> &tree); //constructor copy
+    kdtree(kdtree &&tree); // constructor assignment
+    kdtree& operator=(const kdtree &tree);//operator copy
+    kdtree& operator=(kdtree &&tree);//operator assignment
+
     bool empty() const{return nodes_.empty();}
  
     size_t visited() const{return visited_;}
@@ -82,6 +87,57 @@ kdtree<coordinate_type,dimensions>::kdtree(iterator begin, iterator end){
     for (auto i = begin; i != end; ++i)
         nodes_.emplace_back(*i);
     root_ = make_tree(0, nodes_.size(), 0);
+}
+
+// copy constructor
+template<typename coordinate_type, size_t dimensions>
+kdtree<coordinate_type,dimensions>::kdtree(const kdtree<coordinate_type,dimensions> &tree){
+    std::cout << "kdtree copy constructor" << std::endl;
+    this->best_ = tree.best_;
+    this->best_dist_ = tree.best_dist_;
+    this->root_ = tree.root_;
+    this->visited_ = tree.visited_;
+    this->nodes_ = tree.nodes_; //called assignment operator from std::vector
+}
+
+//move constructor
+template<typename coordinate_type, size_t dimensions>
+kdtree<coordinate_type,dimensions>::kdtree(kdtree<coordinate_type,dimensions> &&tree){
+    std::cout << "kdtree move constructor" << std::endl;
+    this->best_ = tree.best_;
+    this->best_dist_ = tree.best_dist_;
+    this->root_ = tree.root_;
+    this->visited_ = tree.visited_;
+    this->nodes_ = tree.nodes_; //called assignment operator from std::vector
+
+    tree.root_ = nullptr;
+}
+
+//
+template<typename coordinate_type, size_t dimensions>
+kdtree<coordinate_type,dimensions>& kdtree<coordinate_type,dimensions>::operator=(const kdtree &tree){
+    std::cout << "kdtree copy assignment" << std::endl;
+    this->best_ = tree.best_;
+    this->best_dist_ = tree.best_dist_;
+    this->root_ = tree.root_;
+    this->visited_ = tree.visited_;
+    this->nodes_ = tree.nodes_; //called assignment operator from std::vector
+
+    return *this;
+}
+
+template<typename coordinate_type, size_t dimensions>
+kdtree<coordinate_type,dimensions>& kdtree<coordinate_type,dimensions>::operator=(kdtree &&tree){
+    std::cout << "kdtree move assigment" << std::endl;
+    this->best_ = tree.best_;
+    this->best_dist_ = tree.best_dist_;
+    this->root_ = tree.root_;
+    this->visited_ = tree.visited_;
+    this->nodes_ = tree.nodes_; //called assignment operator from std::vector
+
+    tree.root_ = nullptr;
+
+    return *this;
 }
 
 

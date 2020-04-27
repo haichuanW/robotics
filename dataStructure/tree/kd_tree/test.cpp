@@ -51,7 +51,17 @@ int main(){
 
     auto t1 = std::chrono::system_clock::now();
     
-    tree4f tree(points.begin(),points.end());
+    tree4f tree1(points.begin(),points.end());
+
+    //move constructor
+    tree4f tree2=std::move(tree1);//change ownship from tree1 to tree2
+
+    tree4f tree3 = tree2;
+
+    tree4f tree4 = std::move(tree3);
+    // copy constructor
+    tree4f tree(tree4);
+
     point4f n = tree.knnSearch({ 9,2,1,0.1});
     
     auto t2 = std::chrono::system_clock::now();
