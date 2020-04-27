@@ -113,7 +113,7 @@ kdtree<coordinate_type,dimensions>::kdtree(kdtree<coordinate_type,dimensions> &&
     tree.root_ = nullptr;
 }
 
-//
+//operator copy assignment
 template<typename coordinate_type, size_t dimensions>
 kdtree<coordinate_type,dimensions>& kdtree<coordinate_type,dimensions>::operator=(const kdtree &tree){
     std::cout << "kdtree copy assignment" << std::endl;
@@ -126,6 +126,7 @@ kdtree<coordinate_type,dimensions>& kdtree<coordinate_type,dimensions>::operator
     return *this;
 }
 
+//operator move assignment
 template<typename coordinate_type, size_t dimensions>
 kdtree<coordinate_type,dimensions>& kdtree<coordinate_type,dimensions>::operator=(kdtree &&tree){
     std::cout << "kdtree move assigment" << std::endl;
