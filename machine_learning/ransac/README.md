@@ -2,8 +2,8 @@
 
 ### Requirement
 * [PCL](https://github.com/PointCloudLibrary/pcl)
-* [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
-* [ROS Velodyne_driver](https://github.com/ros-drivers/velodyne)
+* [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
+* [VTK](https://vtk.org/)
 
 ### Run
 ```bash
