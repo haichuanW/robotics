@@ -1,5 +1,5 @@
 # lidar segmentation with pcl
-<img src="data  /ObstacleDetectionFPS.gif" width="700" height="400" />
+<img src="obstacle_detection/data/ObstacleDetectionFPS.gif" width="700" height="400" />
 
 
 ## Installation
