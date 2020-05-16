@@ -19,8 +19,8 @@ Problem(not scale invariant)
 Problem(not scale invariant or rotation invariant)
 
 ### ORB (Oriented FAST and Rotated BRIEF)
-
-- Scale invariant(![Pyramid](orb.png))
+![Pyramid](orb.png)
+- Scale invariant(with pyramid)
 - Rotation invariant(intensity centroid)
 
 - Brief(Binary robust independent elementary feature)
