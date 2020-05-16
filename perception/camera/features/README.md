@@ -9,7 +9,8 @@ Problem(not scale invariant)
 
 ### FAST (Features from accelerated segment test)
 
-- select a pixel ![p](fast.png) in the image which can be identified as an insterest point or not 
+![pixel](fast.png)
+- select a pixel p in the image which can be identified as an insterest point or not 
 - select approxipriate threshold value(it is 10 by default in opencv)
 - consider a circle of 16 pixels around the pixel under test(Bresenham circle of radius 3)
 - check whether at least n pixels are greater than p+threshold or less than p-threshold (n=12)
