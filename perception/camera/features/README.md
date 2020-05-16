@@ -9,7 +9,7 @@ Problem(not scale invariant)
 
 ### FAST (Features from accelerated segment test)
 
-- select a pixel [p](fast.png) in the image which can be identified as an insterest point or not 
+- select a pixel ![p](fast.png) in the image which can be identified as an insterest point or not 
 - select approxipriate threshold value(it is 10 by default in opencv)
 - consider a circle of 16 pixels around the pixel under test(Bresenham circle of radius 3)
 - check whether at least n pixels are greater than p+threshold or less than p-threshold (n=12)
@@ -19,7 +19,7 @@ Problem(not scale invariant or rotation invariant)
 
 ### ORB (Oriented FAST and Rotated BRIEF)
 
-- Scale invariant([Pyramid](orb.png))
+- Scale invariant(![Pyramid](orb.png))
 - Rotation invariant(intensity centroid)
 
 - Brief(Binary robust independent elementary feature)
@@ -58,7 +58,7 @@ A binary descriptor is made of three parts:
 
 ### HOG(Histogram of oriented Gradients)
 
-(HOG descriptor for SIFT)[https://gilscvblog.com/2013/08/18/a-short-introduction-to-descriptors/]
+[HOG descriptor for SIFT](https://gilscvblog.com/2013/08/18/a-short-introduction-to-descriptors/)
 
 ## References
 - Shaharyar Ahmed Khan Tareen,etc. "A Comparative Analysis of SIFT, SURF, KAZE,
