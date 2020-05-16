@@ -43,17 +43,13 @@ A binary descriptor is made of three parts:
 
 |        | Sampling pattern             | Orientation calculation | Sampling pairs     |  
 | -------- | :-----------------------:  | :-----------------------: | :----------------: |
-----------------------------------------------------------------------------------------
 | BRIEF  |       None                   |           None          |       Random       |
 | -------- | :-----------------------:  | :-----------------------: | :----------------: |
-----------------------------------------------------------------------------------------
 | ORB    |       None                   |           None          |    Learned pairs   |
 | -------- | :-----------------------:  | :-----------------------: | :----------------: |
-----------------------------------------------------------------------------------------
 |        | Concentric circles with      | comparing gradients     |    Only short pairs|
 | BRISK  | more points on outer rings   | of long pairs           |                    |
 | -------- | :-----------------------:  | :-----------------------: | :----------------: |
-----------------------------------------------------------------------------------------
 |        | Overlapping Concentric       |Comparing gradients of   |                    |
 | FREAK  | circles with more points     |preselected 45 pairs     |     Learned pairs  |
 |        | on inner rings               |                         |                    |
