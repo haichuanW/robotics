@@ -61,6 +61,14 @@ A binary descriptor is made of three parts:
 
 [HOG descriptor for SIFT](https://gilscvblog.com/2013/08/18/a-short-introduction-to-descriptors/)
 
+
+## matching
+
+### brute force(暴力搜索)
+
+### Flann(knn搜索)
+[Implementation of kNN search with kd-tree](https://github.com/wanghaichuan941221/robotics/tree/master/dataStructure/tree/kd_tree)
+
 ## References
 - Shaharyar Ahmed Khan Tareen,etc. "A Comparative Analysis of SIFT, SURF, KAZE,
     AKAZE, ORB, and BRISK" [CoMET 2018](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8346440).
