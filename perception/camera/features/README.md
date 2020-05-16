@@ -64,9 +64,8 @@ A binary descriptor is made of three parts:
 
 ## matching
 
-### brute force(暴力搜索)
 
-### Flann(knn搜索)
+### Flann(knn search)
 [Implementation of kNN search with kd-tree](https://github.com/wanghaichuan941221/robotics/tree/master/dataStructure/tree/kd_tree)
 
 ## References
