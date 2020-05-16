@@ -41,18 +41,18 @@ A binary descriptor is made of three parts:
 - Orientation compensation: some mechanism to measure the orientation of the keypoint and rotate it to compensate for rotation changes.
 - Sampling pairs: which pairs to compare when building the final descriptor.
 
-|        | Sampling pattern             | Orientation calculation | Sampling pairs    
-
-| BRIEF  |       None                   |           None          |       Random
-
-| ORB    |       None                   |           None          |    Learned pairs
-
-|        | Concentric circles with      | comparing gradients     |    Only short pairs
-| BRISK  | more points on outer rings   | of long pairs           |
-
-|        | Overlapping Concentric       |Comparing gradients of   |
-| FREAK  | circles with more points     |preselected 45 pairs     |     Learned pairs
-|        | on inner rings               |                         |
+|        | Sampling pattern             | Orientation calculation | Sampling pairs     |  
+| -------- | :-----------------------:  | :-----------------------: | :----------------: |
+| BRIEF  |       None                   |           None          |       Random       |
+| -------- | :-----------------------:  | :-----------------------: | :----------------: |
+| ORB    |       None                   |           None          |    Learned pairs   |
+| -------- | :-----------------------:  | :-----------------------: | :----------------: |
+|        | Concentric circles with      | comparing gradients     |    Only short pairs|
+| BRISK  | more points on outer rings   | of long pairs           |                    |
+| -------- | :-----------------------:  | :-----------------------: | :----------------: |
+|        | Overlapping Concentric       |Comparing gradients of   |                    |
+| FREAK  | circles with more points     |preselected 45 pairs     |     Learned pairs  |
+|        | on inner rings               |                         |                    |
 
 
 
