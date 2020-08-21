@@ -1,0 +1,24 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+# color model: [1280 * 720] [1920 * 1080]
+color_width: 1280 
+color_height: 720
+
+# depth model: [1024 * 768] [640 * 480]
+depth_width: 1024
+depth_height: 768
+
+# min_depth
+min_depth: 0.0 # range 0-8000
+# laser power
+laser_power: 50.0 # range 0-100
+
+showImage: 1 # visualize image
+saveImage: 1 # save image
+
+saveDir: "../data"
+# saveDir: "/home/haichuan/data/realsense/output"
+
