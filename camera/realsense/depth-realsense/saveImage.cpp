@@ -98,9 +98,14 @@ void saveImage(std::string confileFile) {
     if (showImage == 1) {
       cv::resize(depth, depth, cv::Size(600, 600));
       cv::resize(color, color, cv::Size(600, 600));
+      // normalized image
+      cv::Mat mImDepth;
+      cv::normalize(depth, mImDepth, 0, 255, CV_MINMAX, CV_8U);
+      cv::applyColorMap(mImDepth, mImDepth, cv::COLORMAP_RAINBOW);
 
-      imshow("Display Image", depth);
-      imshow("Display Image1", color);
+      imshow("Display rgb", color);
+      imshow("Display depth", mImDepth);
+
       waitKey(1);
     }
   }
@@ -111,3 +116,4 @@ int main(int argc, char *argv[]) {
   saveImage(configFile);
   return 0;
 }
+
