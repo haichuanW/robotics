@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/haichuan/git/cpp/elte/sensor_fusion/StereoVision/stereo_opencv/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-6   -I../src -isystem /home/haichuan/opencv_build/opencv/build/installation/include -isystem /home/haichuan/opencv_build/opencv/build/installation/include/opencv -isystem /usr/local/include/eigen3    -Wall -O0 -g -g   -o CMakeFiles/stereoVision.dir/stereoVision.cpp.o -c /home/haichuan/git/cpp/elte/sensor_fusion/StereoVision/stereo_opencv/stereoVision.cpp",
+  "file": "/home/haichuan/git/cpp/elte/sensor_fusion/StereoVision/stereo_opencv/stereoVision.cpp"
+}
+]
