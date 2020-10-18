@@ -25,7 +25,9 @@ mkdir build && cd build && cmake .. && make -j
 - [middlebury](https://vision.middlebury.edu/stereo/data/)
 
 3.2 result
-<img align="left" src= "data/result1_naive.png">
+- naive approach
+<img align="left" src= "data/result_naive.png">
+- dynamic approach
 <img align="left" src= "data/dp_disparities.png">
 
 
