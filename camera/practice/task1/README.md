@@ -26,9 +26,10 @@ mkdir build && cd build && cmake .. && make -j
 
 3.2 result
 - naive approach
-<img align="left" src= "data/result_naive.png">
+<img align="left" src= "data/result_naive.png" alt="naive approach results" width="600px">
 - dynamic approach
-<img align="left" src= "data/dp_disparities.png">
+
+<img align="right" src= "data/dp_disparities.png" alt="dynamic programming results" width="600px">
 
 
 
