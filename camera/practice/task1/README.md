@@ -25,12 +25,10 @@ mkdir build && cd build && cmake .. && make -j
 - [middlebury](https://vision.middlebury.edu/stereo/data/)
 
 3.2 result
-- naive approach
-<img align="left" src= "data/result_naive.png" alt="naive approach results" width="600px">
-- dynamic approach
 
-<img align="right" src= "data/dp_disparities.png" alt="dynamic programming results" width="600px">
-
+naive approach             |  dynamic approach
+:-------------------------:|:-------------------------:
+![](data/result_naive.png)  |  ![](data/dp_disparities.png)
 
 
 ## 4. coding style
