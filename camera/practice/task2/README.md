@@ -31,9 +31,9 @@ result 1            |  result 2
 
 - result of guided filter
 
-result 1            |  result 2
+input           |  result 
 :-------------------------:|:-------------------------:
-![](data/1.pgm)  |  ![](data/guide.png)
+![](data/1.png)  |  ![](data/guide.png)
 
 ## 4. coding style
 - We use [Google C++ coding style guide](https://google.github.io/styleguide/cppguide.html)
