@@ -1,0 +1,8 @@
+Language: Cpp
+BasedOnStyle: Google
+IndentWidth: 4
+AccessModifierOffset: -3
+ColumnLimit: 100
+# Only sort headers in each include block
+SortIncludes: true
+IncludeBlocks: Preserve
